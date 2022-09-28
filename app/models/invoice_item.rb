@@ -18,7 +18,7 @@ class InvoiceItem < ApplicationRecord
     Invoice.order(created_at: :asc).find(invoice_ids)
   end
 
-  def best_discount #needs model tested
+  def best_discount 
     bulk_discounts.order(percent_off: :desc).where('quantity <= ?', "#{self.quantity}").first
   end
 end

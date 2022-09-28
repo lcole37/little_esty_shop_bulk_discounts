@@ -115,5 +115,23 @@ RSpec.describe 'As a merchant' do
         expect(page).not_to have_content('Percentage Off: 10%')
       end
     end
+
+    it 'I see a section with a header of "Upcoming Holidays" ' do
+      visit merchant_bulk_discounts_path(@merchant1)
+
+      within '.holidays' do
+        expect(page).to have_content("Upcoming Holidays")
+      end
+    end
+
+    xit "In this section the name and date of the next 3 upcoming US holidays are listed." do
+      visit merchant_bulk_discounts_path(@merchant1)
+
+      within '.holidays' do
+        expect(page).to have_content("Columbus Day")
+        expect(page).to have_content("Veterans Day")
+        expect(page).to have_content("Thanksgiving")
+      end
+    end
   end
 end
