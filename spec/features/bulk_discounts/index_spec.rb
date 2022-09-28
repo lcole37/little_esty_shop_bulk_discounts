@@ -124,7 +124,7 @@ RSpec.describe 'As a merchant' do
       end
     end
 
-    xit "In this section the name and date of the next 3 upcoming US holidays are listed." do
+    it "In this section the name and date of the next 3 upcoming US holidays are listed." do
       visit merchant_bulk_discounts_path(@merchant1)
 
       within '.holidays' do

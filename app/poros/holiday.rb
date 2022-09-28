@@ -1,12 +1,10 @@
 class Holiday
 
-  class Class
-    attr_reader :name,
-                :date
+  attr_reader :name,
+              :date
 
-    def initialize(data)
-       @name = name[:name]
-       @date = data[:date]
-    end
+  def initialize(data)
+     @name = data[:name]
+     @date = data[:date]
   end
 end
